@@ -12,7 +12,7 @@ pip install flet_gradient_text
 - `text_size`(int): optional	Font size of the text
 - `text_weight`	ft.FontWeight, optional	Font weight (e.g., ft.FontWeight.BOLD)
 - `text_style`(ft.TextStyle): optional	Custom text style (used alongside other text props)
-- `animate`	(bool): default False	Enables shimmering animation
+- `animate`	(bool): default False	Enables animation
 - `duration`(float or int): default 0.5,	Controls the speed of the animation (in seconds per loop)
 - `gradient`: optional Custom gradient to apply over the text, default `LinearGradient`
 - `on_click`(ft.ControlEvent) optional	Event handler when the text is clicked
