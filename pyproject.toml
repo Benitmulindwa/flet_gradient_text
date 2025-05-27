@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flet_gradient_text"
+version = "1.0.0"
+description = "A flet component for gradient & animated text"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Benit Mulindwa", email = "mulindwabenit@gmail.com"},
+]
+dependencies = [
+    "flet"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+urls = { "Homepage" = "https://github.com/Benitmulindwa/flet_gradient_text" }
