@@ -9,14 +9,14 @@ pip install flet_gradient_text
 ## 🔧 Parameters
 
 - `text`(str): 	The text content to display
-- `text_size`(int): optional	Font size of the text
-- `text_weight`	ft.FontWeight, optional	Font weight (e.g., ft.FontWeight.BOLD)
-- `text_style`(ft.TextStyle): optional	Custom text style (used alongside other text props)
-- `animate`	(bool): default False	Enables animation
-- `duration`(float or int): default 0.5,	Controls the speed of the animation (in seconds per loop)
-- `gradient`: optional Custom gradient to apply over the text, default `LinearGradient`
-- `on_click`(ft.ControlEvent) optional	Event handler when the text is clicked
-- `on_hover`(ft.ControlEvent) optional	Event handler when hovering over the text
+- `text_size`(optional): default `text_size=20`, Font size of the text
+- `text_weight`: optional,	Font weight (e.g., ft.FontWeight.BOLD)
+- `text_style`(optional): property of type `ft.TextStyle`
+- `animate`	(bool): default `animate=False`, `True` to Enable animation
+- `duration`(float or int): default `duration=0.5`, Controls the speed of the animation
+- `gradient`: (optional) Custom gradient to apply over the text, default `LinearGradient`
+- `on_click`(optional):	Event handler when the text is clicked
+- `on_hover`(optional):	Event handler when hovering over the text
 
 ## 🧩 Usage
 
