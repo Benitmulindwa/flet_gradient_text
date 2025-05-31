@@ -6,7 +6,7 @@ class GradientText(ft.ShaderMask):
     def __init__(
         self,
         text: str,
-        text_size: int = None,
+        text_size: int = 18,
         text_weight: ft.FontWeight = None,
         text_style: ft.TextStyle = None,
         animate: bool = False,
@@ -65,7 +65,7 @@ class GradientText(ft.ShaderMask):
                         height=1,
                     ),
                 ),
-                margin=ft.margin.only(top=-5, bottom=self.text_size // 5),
+                margin=ft.margin.only(bottom=self.text_size // 5),
                 alignment=ft.alignment.center,
                 on_click=self.on_click,
                 on_hover=self.onhover,
