@@ -29,8 +29,8 @@ class GradientText(ft.ShaderMask):
             gradient
             if gradient
             else ft.LinearGradient(
-                begin=ft.alignment.top_left,
-                end=ft.alignment.bottom_right,
+                begin=ft.Alignment.TOP_LEFT,
+                end=ft.Alignment.BOTTOM_RIGHt,
                 colors=[
                     ft.Colors.RED_200,
                     ft.Colors.YELLOW_200,
@@ -66,7 +66,7 @@ class GradientText(ft.ShaderMask):
                     ),
                 ),
                 margin=ft.margin.only(bottom=self.text_size // 5),
-                alignment=ft.alignment.center,
+                alignment=ft.Alignment.CENTER,
                 on_click=self.on_click,
                 on_hover=self.onhover,
             ),
@@ -76,13 +76,19 @@ class GradientText(ft.ShaderMask):
         if self.animate:
             self.page.run_task(self.animation_loop)
 
+    def will_unmount(self):
+        self.page = None
+
     async def animation_loop(self):
-        while True:
+        while self.page is not None:
             self.animation_pos += self.duration / 60
-            if self.animation_pos > max(self.shader.stops):
-                self.animation_pos = -0.0
+
+            if self.animation_pos > max(self.gradient.stops):
+                self.animation_pos = -0.4
+
             spread = 0.4 / (len(self.gradient.stops) - 1)
-            self.shader.stops = [
+
+            new_stops = [
                 max(
                     0.0,
                     min(
@@ -93,5 +99,14 @@ class GradientText(ft.ShaderMask):
                 )
                 for i in range(len(self.gradient.stops))
             ]
+
+            # Create a NEW gradient instead of mutating
+            self.shader = ft.LinearGradient(
+                begin=self.gradient.begin,
+                end=self.gradient.end,
+                colors=self.gradient.colors,
+                stops=new_stops,
+            )
+
             self.update()
             await asyncio.sleep(0.02)
