@@ -30,7 +30,7 @@ class GradientText(ft.ShaderMask):
             if gradient
             else ft.LinearGradient(
                 begin=ft.Alignment.TOP_LEFT,
-                end=ft.Alignment.BOTTOM_RIGHt,
+                end=ft.Alignment.BOTTOM_RIGHT,
                 colors=[
                     ft.Colors.RED_200,
                     ft.Colors.YELLOW_200,
